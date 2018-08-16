@@ -1,0 +1,28 @@
+# {{ansible_managed}}
+
+client
+nobind
+dev tun
+key-direction 1
+remote-cert-tls server
+ 
+remote {{ vpnclient_server['address'] }} {{ vpnclient_server['port'] }} udp
+ 
+ 
+<key>
+{{ vpnclient_key }}
+</key>
+<cert>
+{{ vpnclient_cert }}
+</cert>
+<ca>
+{{ vpnclient_ca }}
+</ca>
+<tls-auth>
+{{ vpnclient_tls_auth }}
+</tls-auth>
+key-direction 1
+ 
+auth-nocache
+comp-lzo
+reneg-sec 259200

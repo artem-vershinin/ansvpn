@@ -1,0 +1,12 @@
+---
+
+- name: Config openvpn
+  become: true
+  template:
+    src: ".{{ vpnclient_config_path }}.j2"
+    dest: "{{ vpnclient_config_path }}"
+    owner: root
+    group: root
+    mode: '0644'
+  notify: runconf
+  tags: ["config"]

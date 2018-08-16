@@ -1,0 +1,9 @@
+---
+
+# This task installs and enables openvpn
+- include: install.yml
+  tags: incinstall
+- include: config.yml
+  tags: incconfig
+- include: vpnisstarted.yml
+  tags: incvpnisstarted

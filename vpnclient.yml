@@ -1,0 +1,12 @@
+---
+
+- name: Initial config
+  hosts: test-servers
+  vars_files:
+    - ./vars/main.yml
+  tags: initialconfig
+
+  roles:
+    - role: vpnclient
+      tags: [ 'incinstall', 'incconfig', 'incvpnisstarted' ]
+      when: ansible_distribution == "{{ vars_files_distribution }}" and ansible_distribution_release == "{{ vars_files_distribution_release }}"

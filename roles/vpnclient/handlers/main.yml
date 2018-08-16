@@ -1,0 +1,8 @@
+---
+
+- name: runconf
+  become: true
+  service:
+    name: openvpn
+    state: restarted
+  tags: ["runconf"]

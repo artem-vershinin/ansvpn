@@ -1,0 +1,5 @@
+---
+
+# Distribution
+vars_files_distribution: "Ubuntu"
+vars_files_distribution_release: "xenial"
